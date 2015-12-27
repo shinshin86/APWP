@@ -4,7 +4,7 @@ import configparser
 import csv
 import os
 
-def take_postdata():
+def take_postdata(arg_file):
     # Read a "Connect Info"
     conf = configparser.SafeConfigParser()
     conf.read('config/postdata_dir.cfg')
@@ -13,12 +13,13 @@ def take_postdata():
     # os.listdir('パス')
     # 指定したパス内の全てのファイルとディレクトリを要素とするリストを返す
     files = os.listdir(postdatas_path)
-    post_text = []
     for file in files:
-        title = file
-        post_title = title.rstrip('\.txt')
-        with open(postdatas_path + "/" + file, encoding='utf-8') as f:
-            for line in f:
-                post_text.append(line)
+        if file == arg_file:
+            title = file
+            post_text = []
+            post_title = title.rstrip('\.txt')
+            with open(postdatas_path + "/" + file, encoding='utf-8') as f:
+                for line in f:
+                    post_text.append(line)
 
-    return post_title,post_text
+    return post_text
