@@ -22,6 +22,3 @@ def take_postdata():
                 post_text.append(line)
 
     return post_title,post_text
-
-if __name__ == '__main__':
-    print(take_postdata())
