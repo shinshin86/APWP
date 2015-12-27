@@ -24,5 +24,4 @@ def take_postdata():
     return post_title,post_text
 
 if __name__ == '__main__':
-    # take_postdata()
     print(take_postdata())
