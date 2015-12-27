@@ -27,7 +27,7 @@ def main():
 
 
     # lists
-    postdata = []
+    post = []
     index = []
     title = []
     content = []
@@ -36,7 +36,7 @@ def main():
     date = []
 
 
-    # Reading a "PostData"
+    # Reading a "post"
     postsReader = csv.reader(open('post/postdata.csv', 'r'), delimiter=',')
     for i,row in enumerate(postsReader):
         if i != 0:
@@ -47,25 +47,24 @@ def main():
                 if j == 1:
                     # What a wrong here?
                     # list => str
-                    print(cont = "".join(postdata.take_postdata(column)))
-                    content.append(cont)
+                    content.append("".join(postdata.take_postdata(column)))
                 if j == 2:
                     tags.append(column)
                 if j == 3:
                     category.append(column)
                 if j == 4:
                     date.append(column)
-    postdata.append(index)
-    postdata.append(title)
-    postdata.append(content)
-    postdata.append(tags)
-    postdata.append(category)
-    postdata.append(date)
+    post.append(index)
+    post.append(title)
+    post.append(content)
+    post.append(tags)
+    post.append(category)
+    post.append(date)
 
 
 
     # debug
-    for i,row in enumerate(postdata):
+    for i,row in enumerate(post):
         print(row)
 
 
