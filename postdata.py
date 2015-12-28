@@ -36,7 +36,6 @@ def take_image(arg_file):
     # os.listdir('パス')
     # 指定したパス内の全てのファイルとディレクトリを要素とするリストを返す
     files = os.listdir(postdatas_path)
-        for file in files:
-            if file == arg_file:
-
-        return postdatas_path + '/' + file
+    for file in files:
+        if file == arg_file:
+            return postdatas_path + '/' + file
