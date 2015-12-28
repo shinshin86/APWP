@@ -3,10 +3,9 @@ import re
 import configparser
 import csv
 import postdata
-
-# Remove a comment later!
-# from wordpress_xmlrpc import Client, WordPressPost
-
+from wordpress_xmlrpc import Client, WordPressPost
+from wordpress_xmlrpc.compat import xmlrpc_client
+from wordpress_xmlrpc.methods import media, posts
 
 def main():
     # Read a "Connect Info"
@@ -34,6 +33,7 @@ def main():
     tags = []
     category = []
     date = []
+    image = []
 
 
     # Reading a "post"
@@ -54,12 +54,15 @@ def main():
                     category.append(column)
                 if j == 4:
                     date.append(column)
+                if j == 5:
+                    image.append(postdata.take_image(column))
     post.append(index)
     post.append(title)
     post.append(content)
     post.append(tags)
     post.append(category)
     post.append(date)
+    post.append(image)
 
 
 

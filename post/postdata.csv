@@ -1,4 +1,4 @@
-title,content_file,tags,category,date
-title1,test.txt,test,sample,20100101
-title2,test2.txt,test,sample,20100201
+title,content_file,tags,category,date,image
+title1,test.txt,test,sample,20100101,sample_image.png
+title2,test2.txt,test,sample,20100201,sample_image.png
 
