@@ -67,9 +67,13 @@ def main():
 
 
     # debug
+    count = 0
     for i,row in enumerate(post):
-        print(row)
-
+        for j,column in enumerate(row):
+            if j == count:
+                print(column)
+    print(i)
+    count += 1
 
 
 if __name__ == '__main__':
