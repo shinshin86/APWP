@@ -76,8 +76,8 @@ def send_to_wordpress(post,post_info,client):
 
             # prepare metadata
             data = {
-                'name': 'picture.png',
-                'type': 'image/jpeg',  # mimetype
+                'name': p,
+                'type': 'image/png',  # mimetype
             }
 
             # Read the binary file
