@@ -28,7 +28,9 @@ def main():
     post_info = WordPressPost()
     # debug print
     print("debug print => config : " + url + " : " + user + " : " +  password)
-
+    
+    client = Client(url,user,password)
+    
     # Post lists
     post_list = []
 
@@ -38,16 +40,14 @@ def main():
     for i,row in enumerate(postsReader):
         if i != 0:
             post_list.append(row)
+
     for i,p in enumerate(post_list):
-        print(i)
         send_to_wordpress(p,post_info,client)
 
-
+# Post process "Wordpress"
 def send_to_wordpress(post,post_info,client):
 
     for i,p in enumerate(post):
-        print("debug print => " + p)
-        
         # Set a title
         if i == 0:
             post_info.title = p
@@ -58,13 +58,11 @@ def send_to_wordpress(post,post_info,client):
 
         # Set a tag & category
         if i == 2:
-            post_tag = "'post_tag': " + p + "]"
+            post_tag = p
 
         if i == 3:
-            post_category = "'category': [" + p + "]"
-            post_info.terms_names = {}
-            post_info.terms_names = post_tag
-            post_info.terms_names = post_category
+            post_category = p
+            post_info.terms_names = { 'post_tag':[post_tag],'category':[post_category]}
 
         # Set a date
         if i == 4:
