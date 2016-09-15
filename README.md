@@ -10,3 +10,14 @@ Automatic Post for WordPress
 ###Require install (pip)
 
 	pip install python-wordpress-xmlrpc
+	
+--------
+
+## Make a roadmap to Version 1.0
+
+
+Function of Implementation plan.
+
+* Create a multi post function.
+* Create some "apwp" command.
+* Create web base ui.
