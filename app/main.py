@@ -2,7 +2,7 @@
 import re
 import configparser
 import csv
-import postdata
+import post
 from datetime import datetime as dt
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.compat import xmlrpc_client
@@ -14,7 +14,7 @@ from wordpress_xmlrpc.methods.users import GetUserInfo
 def main():
     # Read a "Connect Info"
     conf = configparser.SafeConfigParser()
-    conf.read('config/connect_wp.cfg')
+    conf.read('../config/connect_wp.cfg')
     connect_wp = str(conf.get('connect_info','url'))
     connect_user = str(conf.get('connect_info','user'))
     connect_pass = str(conf.get('connect_info','password'))
@@ -24,13 +24,13 @@ def main():
     url = connect_wp
     user = connect_user
     password = connect_pass
-    
+
     post_info = WordPressPost()
     # debug print
     print("debug print => config : " + url + " : " + user + " : " +  password)
-    
+
     client = Client(url,user,password)
-    
+
     # Post lists
     post_list = []
 
