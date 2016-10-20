@@ -14,12 +14,14 @@ class PostTest(unittest.TestCase):
         shutil.rmtree("./app/post")
 
     def test_take_postdata(self):
+        # TODO:
         postdatas_path = str(self.conf.get('postdata','content'))
         files = os.listdir(os.path.join("app",postdatas_path))
         self.assertEqual(len(files), 2)
 
 
     def test_take_image(self):
+        # TODO:
         postdatas_path = str(self.conf.get("postdata", "image"))
         files = os.listdir(os.path.join("app", postdatas_path))
         self.assertEqual(len(files), 1)
