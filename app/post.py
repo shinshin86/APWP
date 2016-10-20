@@ -7,7 +7,7 @@ import os
 def take_postdata(arg_file):
     # Read a "Connect Info"
     conf = configparser.SafeConfigParser()
-    conf.read('../config/postdata_dir.cfg')
+    conf.read('./config/postdata_dir.cfg')
     postdatas_path = str(conf.get('postdata','content'))
 
 
@@ -29,7 +29,7 @@ def take_postdata(arg_file):
 def take_image(arg_file):
     # Read a "Connect Info"
     conf = configparser.SafeConfigParser()
-    conf.read('../config/postdata_dir.cfg')
+    conf.read('./config/postdata_dir.cfg')
     postdatas_path = str(conf.get('postdata','image'))
 
     files = os.listdir(postdatas_path)
