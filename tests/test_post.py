@@ -2,6 +2,8 @@ import unittest
 import os
 import shutil
 import configparser
+from app.post import take_content
+from app.post import take_image
 class PostTest(unittest.TestCase):
     def setUp(self):
         if os.path.isdir("./tests/files"):
@@ -13,16 +15,14 @@ class PostTest(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree("./app/post")
 
-    def test_take_postdata(self):
-        postdatas_path = str(self.conf.get('postdata','content'))
-        files = os.listdir(os.path.join("app",postdatas_path))
-        self.assertEqual(len(files), 2)
+    def test_take_content(self):
+        test_content = "test.txt"
+        self.assertTrue(take_content(test_content))
 
 
     def test_take_image(self):
-        postdatas_path = str(self.conf.get("postdata", "image"))
-        files = os.listdir(os.path.join("app", postdatas_path))
-        self.assertEqual(len(files), 1)
+        test_image = "sample_image.png"
+        self.assertTrue(take_image(test_image))
 
 if __name__ == "__main__":
     unittest.main()
