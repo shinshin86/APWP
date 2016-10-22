@@ -4,18 +4,18 @@ import configparser
 import csv
 import os
 import app.config_util
-def take_postdata(arg_file):
+def take_content(arg_file):
     # Read a "Connect Info"
     conf = app.config_util.read()
-    postdatas_path = conf["postdatas_path"]
+    contents_path = conf["contents"]
 
-    files = os.listdir(postdatas_path)
+    files = os.listdir(contents_path)
     for file in files:
         if file == arg_file:
             title = file
             post_text = []
             post_title = title.rstrip('\.txt')
-            with open(postdatas_path + "/" + file, encoding='utf-8') as f:
+            with open(contents_path + "/" + file, encoding='utf-8') as f:
                 for line in f:
                     post_text.append(line)
 
@@ -24,7 +24,7 @@ def take_postdata(arg_file):
 def take_image(arg_file):
     # Read a "Connect Info"
     conf = app.config_util.read()
-    postdatas_path = conf["postimages_path"]
+    postdatas_path = conf["images"]
 
     files = os.listdir(postdatas_path)
     for file in files:

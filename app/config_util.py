@@ -10,8 +10,9 @@ def read():
     conf_dict = {"connect_wp" : str(conf_connect.get('connect_info','url')),
                  "connect_user" : str(conf_connect.get('connect_info','user')),
                  "connect_pass" : str(conf_connect.get('connect_info','password')),
-                 "postdatas_path" : str(conf_post.get('postdata','content')),
-                 "postimages_path" : str(conf_post.get('postdata', 'image'))}
+                 "postdatas" : str(conf_post.get('postdata', 'postdata')),
+                 "contents" : str(conf_post.get('postdata','content')),
+                 "images" : str(conf_post.get('postdata', 'image'))}
     return conf_dict
 
 

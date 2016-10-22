@@ -2,7 +2,7 @@ import unittest
 import os
 import shutil
 import configparser
-from app.post import take_postdata
+from app.post import take_content
 from app.post import take_image
 class PostTest(unittest.TestCase):
     def setUp(self):
@@ -15,9 +15,9 @@ class PostTest(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree("./app/post")
 
-    def test_take_postdata(self):
+    def test_take_content(self):
         test_content = "test.txt"
-        self.assertTrue(take_postdata(test_content))
+        self.assertTrue(take_content(test_content))
 
 
     def test_take_image(self):

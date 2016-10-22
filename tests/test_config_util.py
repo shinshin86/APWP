@@ -12,7 +12,9 @@ class ConfigUtilTest(unittest.TestCase):
         self.assertTrue(conf["connect_wp"])
         self.assertTrue(conf["connect_user"])
         self.assertTrue(conf["connect_pass"])
-        self.assertTrue(conf["postdatas_path"])
+        self.assertTrue(conf["postdatas"])
+        self.assertTrue(conf["contents"])
+        self.assertTrue(conf["images"])
 
 
 if __name__ == "__main__":

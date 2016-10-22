@@ -50,7 +50,7 @@ def send_to_wordpress(post,post_info,client):
 
         # Set a content
         if i == 1:
-             post_info.content = postdata.take_postdata(p)
+             post_info.content = postdata.take_content(p)
 
         # Set a tag & category
         if i == 2:
