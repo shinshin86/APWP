@@ -1,0 +1,5 @@
+[connect_info]
+url = {your wordpress url}
+user = {user name}
+password = {password}
+

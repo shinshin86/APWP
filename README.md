@@ -48,6 +48,14 @@ Function of Implementation plan.
 >
 >   WordPress
 
+## Test
+
+Use unittest
+
+```
+python -m unittest discover
+```
+
 
 
 ## Licence

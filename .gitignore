@@ -3,3 +3,6 @@
 *.pyc
 .*.py.un~
 **/__pycache__/
+
+config/connect_wp.cfg
+config/postdata_dir.cfg

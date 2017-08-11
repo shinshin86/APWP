@@ -3,7 +3,8 @@ import re
 import configparser
 import csv
 import os
-import app.config_util
+import config_util
+
 def fetch_content(arg_file):
     # Read a "Connect Info"
     conf = app.config_util.read()
