@@ -2,27 +2,27 @@ import unittest
 import os
 import shutil
 import configparser
-from app.post import take_content
-from app.post import take_image
+from app.post import fetch_content
+from app.post import fetch_image
 class PostTest(unittest.TestCase):
     def setUp(self):
         if os.path.isdir("./tests/files"):
-            shutil.copytree("./tests/files/post", "./app/post")
+            shutil.copytree("./tests/files/post", "./post")
 
         self.conf = configparser.ConfigParser()
         self.conf.read('./config/postdata_dir.cfg')
 
     def tearDown(self):
-        shutil.rmtree("./app/post")
+        shutil.rmtree("./post")
 
-    def test_take_content(self):
+    def test_fetch_content(self):
         test_content = "test.txt"
-        self.assertTrue(take_content(test_content))
+        self.assertTrue(fetch_content(test_content))
 
 
-    def test_take_image(self):
+    def test_fetch_image(self):
         test_image = "sample_image.png"
-        self.assertTrue(take_image(test_image))
+        self.assertTrue(fetch_image(test_image))
 
 if __name__ == "__main__":
     unittest.main()

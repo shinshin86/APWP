@@ -4,7 +4,7 @@ import configparser
 import csv
 import os
 import app.config_util
-def take_content(arg_file):
+def fetch_content(arg_file):
     # Read a "Connect Info"
     conf = app.config_util.read()
     contents_path = conf["contents"]
@@ -21,7 +21,7 @@ def take_content(arg_file):
 
     return "".join(post_text)
 
-def take_image(arg_file):
+def fetch_image(arg_file):
     # Read a "Connect Info"
     conf = app.config_util.read()
     postdatas_path = conf["images"]

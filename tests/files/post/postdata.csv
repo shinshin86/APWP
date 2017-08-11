@@ -1,4 +1,4 @@
-title,content_file,tags,category,date,image
-title1,test.txt,test,sample,2015-12-31,sample_image.png
-title2,test2.txt,test,sample,2016-01-01,sample_image.png
+id,title,content_file,tags,category,date,image
+20000001,title1,test.txt,test,sample,2015-12-31,sample_image.png
+20000002,title2,test2.txt,test,sample,2016-01-01,sample_image.png
 

@@ -1,8 +1,7 @@
 .DS_Store
+..gitignore.un~
 *.un~
 *.pyc
-app/*.un~
-tests/*.un~
-config/*.un~
-app/__pycache__/
-tests/__pycache__/
+**/*.un~
+**/.*.py.un~
+**/__pycache__/
