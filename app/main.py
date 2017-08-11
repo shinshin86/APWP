@@ -88,6 +88,11 @@ def send_to_wordpress(post,post_info,client):
             # wordpress post
             client.call(NewPost(post_info))
 
+def read_to_json(json):
+    # TODO
+
+def read_to_csv(csv):
+    # TODO
 
 if __name__ == '__main__':
     main()
