@@ -3,6 +3,10 @@ Automatic Post for WordPress
 
 ## Requirement
 
+##### Use Python3 and 
+
+this library to pip install
+
 	pip install python-wordpress-xmlrpc
 
 ## Usage
@@ -28,19 +32,19 @@ Function of Implementation plan.
 
 >  APWP(web ui)
 >
-> ​         │
+>  ​         │
 >
-> ​         │Check post schedule
+>  ​         │Store post schedule and Check post schedule
 >
-> ​         │
+>  ​         │
 >
->  APWP(cli) <— fetch post data— json, csv, web api
+>  APWP(cli) <— fetch post data— json, csv, and DB
 >
-> ​         │
+>  ​         │
 >
-> ​         │send post to wordpress
+>  ​         │send post to wordpress
 >
-> ​         │
+>  ​         │
 >
 >   WordPress
 
