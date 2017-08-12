@@ -12,7 +12,8 @@ def config_read():
                  "connect_pass" : str(conf_connect.get('connect_info','password')),
                  "postdir" : str(conf_post.get('postdata', 'postdata')),
                  "contents" : str(conf_post.get('postdata','content')),
-                 "images" : str(conf_post.get('postdata', 'image'))}
+                 "images" : str(conf_post.get('postdata', 'image')),
+                 "filetype" : str(conf_post.get('postdata', 'filetype'))}
     return conf_dict
 
 

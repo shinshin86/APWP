@@ -1,6 +1,8 @@
 # Postdata file path is here
+# filetype is json or csv
 [postdata]
 postdata = ./post
 content = ./post/content
 image = ./post/image
+filetype = json
 

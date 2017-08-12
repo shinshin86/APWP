@@ -19,20 +19,28 @@ def main():
 
     postfile_path = get_post_dir()
 
-    # csv
-    #datas = read_to_csv(path.join(postfile_path, 'postdata.csv'), client)
+    filetype = get_file_type()
 
-    # json
-    datas = read_to_json(path.join(postfile_path, 'postdata.json'), client)
+    datas = []
+
+    if filetype == 'json':
+        datas = read_to_json(path.join(postfile_path, 'postdata.json'), client)
+    elif filetype == 'csv':
+        datas = read_to_csv(path.join(postfile_path, 'postdata.csv'), client)
+    else:
+        print("not selected file type...check config file")
+        exit
 
     for i in datas:
         send_to_wordpress(i, post, client)
 
 
 def get_post_dir():
-    conf = config_read()
-    return conf["postdir"]
+    return config_read()["postdir"]
 
+
+def get_file_type():
+    return config_read()["filetype"]
 
 def get_connect_client():
     conf = config_read()
