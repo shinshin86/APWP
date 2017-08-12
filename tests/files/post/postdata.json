@@ -4,7 +4,7 @@
   "content_file":"test.txt",
   "tag":"tag1, tag2, tag3",
   "category":"sample",
-  "data":"2015-12-31",
+  "data":"2015-12-31 23:59:59",
   "image": "sampla_image.png"
 }
 
