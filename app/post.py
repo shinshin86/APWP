@@ -3,11 +3,10 @@ import re
 import configparser
 import csv
 import os
-import config_util
+from config_util import config_read
 
 def fetch_content(arg_file):
-    # Read a "Connect Info"
-    conf = config_util.read()
+    conf = config_read()
     contents_path = conf["contents"]
 
     files = os.listdir(contents_path)
@@ -24,8 +23,7 @@ def fetch_content(arg_file):
     return "".join(post_text)
 
 def fetch_image(arg_file):
-    # Read a "Connect Info"
-    conf = config_util.read()
+    conf = config_read()
     postdatas_path = conf["images"]
 
     files = os.listdir(postdatas_path)

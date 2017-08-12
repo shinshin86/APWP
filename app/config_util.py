@@ -1,7 +1,7 @@
 import configparser
 
 
-def read():
+def config_read():
     conf_connect = configparser.ConfigParser()
     conf_post = configparser.ConfigParser()
     conf_connect.read('./config/connect_wp.cfg')

@@ -4,16 +4,15 @@ import shutil
 import configparser
 from app.post import fetch_content
 from app.post import fetch_image
+
 class PostTest(unittest.TestCase):
     def setUp(self):
         if os.path.isdir("./tests/files"):
-            shutil.copytree("./tests/files/post", "./post")
+            shutil.copytree("./tests/files/post", "./post_test")
 
-        self.conf = configparser.ConfigParser()
-        self.conf.read('./config/postdata_dir.cfg')
 
     def tearDown(self):
-        shutil.rmtree("./post")
+        shutil.rmtree("./post_test")
 
     def test_fetch_content(self):
         test_content = "test.txt"
@@ -22,9 +21,6 @@ class PostTest(unittest.TestCase):
 
     def test_fetch_image(self):
         test_image = "sample_image.png"
-        img_path = "./post/image/sample_image.png"
-        res = fetch_image(test_image)
-        self.assertEqual(img_path, res)
         self.assertTrue(fetch_image(test_image))
 
 if __name__ == "__main__":

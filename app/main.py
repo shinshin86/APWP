@@ -2,7 +2,7 @@
 import re
 import configparser
 import csv
-import config_util
+from config_util import config_read
 from os import path
 from postdata_csv import read_to_csv
 from wordpress_xmlrpc import Client, WordPressPost
@@ -26,12 +26,12 @@ def main():
 
 
 def get_post_dir():
-    conf = config_util.read()
+    conf = config_read()
     return conf["postdir"]
 
 
 def get_connect_client():
-    conf = config_util.read()
+    conf = config_read()
 
     url = conf["connect_wp"]
     user = conf["connect_user"]
