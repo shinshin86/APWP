@@ -5,6 +5,7 @@ import csv
 from config_util import config_read
 from os import path
 from postdata_csv import read_to_csv
+from postdata_json import read_to_json
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods import media, posts
 from wordpress_xmlrpc.methods.posts import GetPosts, NewPost
@@ -18,8 +19,11 @@ def main():
 
     postfile_path = get_post_dir()
 
-    datas = read_to_csv(path.join(postfile_path, 'postdata.csv'), client)
-    # postsReader = csv.reader(open('post/postdata.json', 'r'), delimiter=',')
+    # csv
+    #datas = read_to_csv(path.join(postfile_path, 'postdata.csv'), client)
+
+    # json
+    datas = read_to_json(path.join(postfile_path, 'postdata.json'), client)
 
     for i in datas:
         send_to_wordpress(i, post, client)

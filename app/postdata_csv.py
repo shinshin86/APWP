@@ -8,7 +8,7 @@ from wordpress_xmlrpc.methods import media, posts
 def read_to_csv(filepath, client):
     post_list = []
 
-    postsReader = csv.reader(open('post/postdata.csv', 'r'), delimiter=',')
+    postsReader = csv.reader(open(filepath, 'r'), delimiter=',')
 
     for i,row in enumerate(postsReader):
         if i != 0:

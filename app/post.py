@@ -3,6 +3,7 @@ import re
 import configparser
 import csv
 import os
+from os import path
 from config_util import config_read
 
 def fetch_content(arg_file):
@@ -27,6 +28,6 @@ def fetch_image(arg_file):
     postdatas_path = conf["images"]
 
     files = os.listdir(postdatas_path)
-    for file in files:
-        if file == arg_file:
-            return postdatas_path + '/' + file
+    for f in files:
+        if f == arg_file:
+            return path.join(postdatas_path, f)
